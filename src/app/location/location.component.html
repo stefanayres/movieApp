@@ -1,3 +1,14 @@
-<p>
-  location works!
-</p>
+{{location}}
+<h1>Something About My Location</h1>
+
+<!-- Only trigger a geolocation request on user interaction -->
+<a href='#' id='getLocation'>Find My Location</a>
+
+<!-- Offer an alternative -->
+<form action='#'>
+  <label for='manualLocation'>Or, enter your city...</label>
+  <input type='text' id='manualLocation' placeholder=''>
+</form>
+
+<!-- Show some information about the location, when known -->
+<div id='feedback'>Location is not yet known...</div>
