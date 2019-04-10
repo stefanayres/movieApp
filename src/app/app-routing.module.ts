@@ -7,7 +7,7 @@ import { LocationComponent } from './location/location.component';
 
 const routes: Routes = [
   { path: '',           component:LocationComponent },
-  { path: 'listMovies', component:MoviesComponent },
+  { path: 'listMovies/:id', component:MoviesComponent },
   { path: 'movie/:id', component:MovieComponent },
   { path: 'showtime/:id', component:MovieTimesComponent },
 ];
