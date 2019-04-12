@@ -21,8 +21,8 @@ long: any;
     //private location: LocationService
   ) { }
 
-  cities = [{'name':'-None-','lat': '0', 'long': '0'},
-            {'name':'Dundalk','lat': '54.003927', 'long': '-6.402207'}, //54.003927, -6.402207
+  cities = [{'name':'Dundalk','lat': '54.003927', 'long': '-6.402207'}, //54.003927, -6.402207
+            {'name':'-None-','lat': '0', 'long': '0'},
             {'name':'Droghada','lat': '53.714452', 'long': '-6.351818'},//53.714452, -6.351818
             {'name':'Cavan','lat': '53.990751', 'long': '-7.362873'},//53.990751, -7.362873
             {'name':'Galway','lat': '53.270695', 'long': '-9.061707'},//53.270695, -9.061707

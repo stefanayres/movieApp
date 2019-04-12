@@ -1,24 +1,15 @@
-{{location}}
-<h1>Something About My Location</h1>
 
-<!-- Only trigger a geolocation request on user interaction -->
 <a href='#' id='getLocation'>Find My Location</a>
-
-<!-- Offer an alternative -->
-<form action='#'>
-  <label for='manualLocation'>Or, enter your city...</label>
-  <input type='text' id='manualLocation' placeholder=''>
-</form>
 
 <select [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)" >
       <option *ngFor="let c of cities" [ngValue]="c"> {{c.name}} </option>
 </select>
 
 <!-- Show some information about the location, when known -->
-<div id='feedback'>Location is not yet known...</div>
+<div id='feedback'></div>
 
 
-<div>
+<div *ngIf='lat'>
   <p><strong>Latitude:</strong> {{lat}}<br>
   <strong>Longitude:</strong> {{long}}<br>
   <div>
