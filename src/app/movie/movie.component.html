@@ -1,22 +1,31 @@
 
 
-<div *ngIf='movie'>
-  {{movie.Title}}
-  {{movie.Year}}
-  {{movie.Rating}}
-  {{movie.Runtime}}
-  {{movie.Director}}
-  {{trailer.results.key}}
-  <p>{{movie.Website}}</p>
-  <p>{{movie.Website}}</p>
+<div class="textTop" *ngIf='movie'>
+
+<button class="myButton" (click)="ngxSmartModalService.getModal('myModal').open()">Play Trailer</button>
+  <h4>{{movie.Year}}</h4>
+  <h1>{{movie.Title}}</h1>
+  <p>{{movie.Rating}}</p>
+  <p>{{movie.Runtime}}</p>
+  <p>{{trailer.results.key}}</p>
+  <p><i><a class="link" href="{{movie.Website}}">Visit {{movie.Title}} Website. </a></i></p>
+
+
+
+  <img class="img" *ngIf='movie' src="{{movie.Poster}}" alt="">
+
+  <div *ngFor="let mov of movie.Ratings">
+    <p>{{mov.Source}} - {{mov.Value}}</p>
+  </div>
+
+
 </div>
 
+<ngx-smart-modal #myModal identifier="myModal">
+  <div *ngIf='movie' class="iframe-container">
+    <iframe  [class.thumbnail]="thumbnail" [src]="safeSrc" frameborder="0"
+        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
 
-<img *ngIf='movie' src="{{movie.Poster}}" alt="">
-
-<ul *ngIf='movie'>
-  <li *ngFor="let mov of movie.Ratings">{{mov.Source}} - {{mov.Value}}</li>
-</ul>
-
-<iframe *ngIf='movie' [class.thumbnail]="thumbnail" [src]="safeSrc" frameborder="0"
-    webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <button (click)="myModal.close()">Close</button>
+</ngx-smart-modal>

@@ -1,0 +1,67 @@
+h1, h2, h3, h4, p, a {
+  color: white;
+}
+.img{
+  padding: 2rem 0 2rem 0;
+}
+a.link{
+  margin-right: 50%;
+}
+
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	background-color:#63b8ee;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #3866a3;
+	display:inline-block;
+	cursor:pointer;
+	color:#14396a;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:.2rem .5rem;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #7cacde;
+  position: absolute;
+}
+.myButton:hover {
+	background-color:#468ccf;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.button{
+  margin: 5px;
+}
+
+
+@media only screen and (min-width: 900px) {
+
+
+  .img{
+    //float: left;
+    padding: 2rem 2rem 2rem 0;
+  }
+
+}

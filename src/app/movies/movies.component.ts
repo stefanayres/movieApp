@@ -33,7 +33,7 @@ export class MoviesComponent implements OnInit {
            //this.spinner.hide();
            setTimeout(() => {
                    this.spinner.hide();
-               }, 1500);
+               }, 900);
         });
       };
 

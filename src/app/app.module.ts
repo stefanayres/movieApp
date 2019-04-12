@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { MoviesService } from './service/movies.service';
 import { MDBBootstrapModule } from 'angular-bootstrap-md'; // not using mdbootstrap
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FormsModule,
     MDBBootstrapModule.forRoot(),
     NgxSpinnerModule,
+    NgxSmartModalModule.forRoot(),
   ],
   providers: [
     MoviesService
