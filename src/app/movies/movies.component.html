@@ -1,4 +1,4 @@
-
-<ul>
-  <li *ngFor="let movie of movies.films"><a routerLink='/movie/{{movie.imdb_id}}'>{{movie.film_name}}</a></li>
-</ul>
+<div routerLink='/movie/{{movie.imdb_id}}' *ngFor="let movie of movies.films">
+    <img src="{{movie.images.poster[1].medium.film_image}}" alt=""> 
+    <h4>{{movie.film_name}} - age:{{movie.age_rating[0].rating}}</h4>
+</div>

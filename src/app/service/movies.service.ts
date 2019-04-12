@@ -21,6 +21,10 @@ export class MoviesService {
     return this.http.get(`https://www.omdbapi.com/?i=tt${id}&apikey=db203e5e`);
   }
 
+  getTrailer(id: any){
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US&api_key=7b368fb69167a2d40c7c86bd6a293029`);
+  }
+
           // callApi(Longitude: number, Latitude: number){
           //   const url = `https://api-adresse.data.gouv.fr/reverse/?lon=${Longitude}&lat=${Latitude}`
           //   //Call API
