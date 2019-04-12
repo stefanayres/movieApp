@@ -10,5 +10,18 @@
   <input type='text' id='manualLocation' placeholder=''>
 </form>
 
+<select [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)" >
+      <option *ngFor="let c of cities" [ngValue]="c"> {{c.name}} </option>
+</select>
+
 <!-- Show some information about the location, when known -->
 <div id='feedback'>Location is not yet known...</div>
+
+
+<div>
+  <p><strong>Latitude:</strong> {{lat}}<br>
+  <strong>Longitude:</strong> {{long}}<br>
+  <div>
+    <a routerLink='/listMovies/{{lat}};{{long}}'>Find Movies Near Me </a>
+  </div>
+</div>
