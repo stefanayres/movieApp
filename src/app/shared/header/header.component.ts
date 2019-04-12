@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
     pageLinks = [
       {path: '/',           name: 'Home'},
-      {path: '/listMovies/:id',   name: 'List Movies'},
+      {path: '/listMovies/:location',   name: 'List Movies'},
       { path: '**', redirectTo: '' }
     ];
 

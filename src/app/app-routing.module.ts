@@ -6,10 +6,10 @@ import { MovieTimesComponent } from './movie-times/movie-times.component';
 import { LocationComponent } from './location/location.component';
 
 const routes: Routes = [
-  { path: '',           component:LocationComponent },
-  { path: 'listMovies/:id', component:MoviesComponent },
-  { path: 'movie/:id', component:MovieComponent },
-  { path: 'showtime/:id', component:MovieTimesComponent },
+  { path: '',               component:LocationComponent },
+  { path: 'listMovies/:location', component:MoviesComponent },
+  { path: 'movie/:movie',   component:MovieComponent },
+  { path: 'showtime/:id',   component:MovieTimesComponent },
 ];
 
 @NgModule({

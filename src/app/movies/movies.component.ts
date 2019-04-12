@@ -9,8 +9,8 @@ import { MoviesService } from '../service/movies.service';
   styleUrls: ['./movies.component.sass']
 })
 export class MoviesComponent implements OnInit {
-  movies: any;
-  data: any;
+    movies: any;
+    data: any;
 
   constructor(
     private service: MoviesService,
@@ -20,8 +20,8 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-    this.data = params.get("id")
-  })
+    this.data = params.get("location")
+    })
 console.log(this.data);
 
     this.service.showmovies(this.data)

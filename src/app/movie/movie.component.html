@@ -1,3 +1,20 @@
-<p>
-  movie works!
-</p>
+{{movie.Title}}
+{{movie.Year}}
+{{movie.Rating}}
+{{movie.Runtime}}
+{{movie.Director}}
+{{trailer.results.key}}
+
+  <!-- <iframe *ngFor="let trail of trailer.results | slice:0:1;" src="https://www.youtube.com/watch?v={{trail.key}}"></iframe> -->
+
+  <iframe [class.thumbnail]="thumbnail" [src]="safeSrc" frameborder="0"
+      webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<img src="{{movie.Poster}}" alt="">
+
+<ul>
+  <li *ngFor="let mov of movie.Ratings">{{mov.Source}} - {{mov.Value}}</li>
+</ul>
+
+<p>{{movie.Website}}</p>
+<p>{{safeSrc}}</p>
