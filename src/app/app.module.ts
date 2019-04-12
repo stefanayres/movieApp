@@ -12,6 +12,9 @@ import { LocationComponent } from './location/location.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { MoviesService } from './service/movies.service';
+import { MDBBootstrapModule } from 'angular-bootstrap-md'; // not using mdbootstrap
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { MoviesService } from './service/movies.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MDBBootstrapModule.forRoot(),
+    NgxSpinnerModule,
   ],
   providers: [
     MoviesService

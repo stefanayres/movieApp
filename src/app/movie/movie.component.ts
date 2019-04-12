@@ -6,7 +6,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.sass']
+  styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
     safeSrc: SafeResourceUrl;
@@ -53,7 +53,7 @@ export class MovieComponent implements OnInit {
     this.service.getTrailer(this.imdbid)
         .subscribe((data: any) => {
           this.trailer = data as any;
-          this.key = this.trailer.results[0]; // some movies have multiple trailers 
+          this.key = this.trailer.results[0]; // some movies have multiple trailers
           this.url = this.key.key;
           this.fullUrl = "https://www.youtube.com/embed/" + this.url + "";
           console.log(this.fullUrl);

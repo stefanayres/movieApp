@@ -1,20 +1,22 @@
-{{movie.Title}}
-{{movie.Year}}
-{{movie.Rating}}
-{{movie.Runtime}}
-{{movie.Director}}
-{{trailer.results.key}}
 
-  <!-- <iframe *ngFor="let trail of trailer.results | slice:0:1;" src="https://www.youtube.com/watch?v={{trail.key}}"></iframe> -->
 
-  <iframe [class.thumbnail]="thumbnail" [src]="safeSrc" frameborder="0"
-      webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<div *ngIf='movie'>
+  {{movie.Title}}
+  {{movie.Year}}
+  {{movie.Rating}}
+  {{movie.Runtime}}
+  {{movie.Director}}
+  {{trailer.results.key}}
+  <p>{{movie.Website}}</p>
+  <p>{{movie.Website}}</p>
+</div>
 
-<img src="{{movie.Poster}}" alt="">
 
-<ul>
+<img *ngIf='movie' src="{{movie.Poster}}" alt="">
+
+<ul *ngIf='movie'>
   <li *ngFor="let mov of movie.Ratings">{{mov.Source}} - {{mov.Value}}</li>
 </ul>
 
-<p>{{movie.Website}}</p>
-<p>{{safeSrc}}</p>
+<iframe *ngIf='movie' [class.thumbnail]="thumbnail" [src]="safeSrc" frameborder="0"
+    webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

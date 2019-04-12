@@ -136,5 +136,10 @@
       }
     }
   },
-  "defaultProject": "movieApp"
+  "defaultProject": "movieApp",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

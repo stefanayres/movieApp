@@ -1,4 +1,12 @@
+<div class="card-group">
 <div routerLink='/movie/{{movie.imdb_id}}' *ngFor="let movie of movies.films">
-    <img src="{{movie.images.poster[1].medium.film_image}}" alt=""> 
-    <h4>{{movie.film_name}} - age:{{movie.age_rating[0].rating}}</h4>
+
+  <div class="card">
+    <img class="card-img-top" src="{{movie.images.poster[1].medium.film_image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.film_name}}</h5>
+      <p class="card-text">{{movie.age_rating[0].rating}}</p>
+    </div>
+  </div>
+</div>
 </div>
