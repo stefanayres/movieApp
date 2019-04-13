@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MoviesService } from '../service/movies.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-movie',
@@ -20,6 +21,7 @@ export class MovieComponent implements OnInit {
     fullUrl:  any;
 
   constructor(
+    private spinner: NgxSpinnerService,
     private sanitizer: DomSanitizer,
     private service: MoviesService,
     private router: Router,
@@ -29,11 +31,12 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.route.paramMap.subscribe(params => {
     this.data = params.get("movie")
-
   })
 
+  this.spinner.show();
   this.service.showmovie(this.data)
       .subscribe((data: any) => {
         this.movie = data as any;
@@ -41,13 +44,13 @@ export class MovieComponent implements OnInit {
         this.imdbid = this.movie.imdbID;
         if (this.imdbid !== undefined){
         this.runGetTrailer()
+        setTimeout(() => {
+                this.spinner.hide();
+            }, 900);
     }else{
         return this.router.navigateByUrl('listMovies/:location');
     }
   });
-
-
-
 
   } // end ngOnInit
 
@@ -62,7 +65,5 @@ export class MovieComponent implements OnInit {
             (this.fullUrl);
         });
       }
-
-
 
 }

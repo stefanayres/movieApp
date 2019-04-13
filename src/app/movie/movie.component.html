@@ -1,31 +1,33 @@
+<div *ngIf='movie'>
+  <button class="myButton" (click)="ngxSmartModalService.getModal('myModal').open()">Play Trailer</button>
 
-
-<div class="textTop" *ngIf='movie'>
-
-<button class="myButton" (click)="ngxSmartModalService.getModal('myModal').open()">Play Trailer</button>
-  <h4>{{movie.Year}}</h4>
   <h1>{{movie.Title}}</h1>
+  <p>{{movie.Year}}</p>
   <p>{{movie.Rating}}</p>
-  <p>{{movie.Runtime}}</p>
-  <p>{{trailer.results.key}}</p>
+  <p>Runtime - {{movie.Runtime}}</p>
+
   <p><i><a class="link" href="{{movie.Website}}">Visit {{movie.Title}} Website. </a></i></p>
-
-
-
   <img class="img" *ngIf='movie' src="{{movie.Poster}}" alt="">
+  <h4>Plot</h4>
+  <p class="plot">{{movie.Plot}}</p>
 
-  <div *ngFor="let mov of movie.Ratings">
-    <p>{{mov.Source}} - {{mov.Value}}</p>
-  </div>
+  <table  class="rwd-table">
+    <tr>
+      <th>Website</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let mov of movie.Ratings">
+      <td data-th="Website">{{mov.Source}}</td>
+      <td data-th="Score">{{mov.Value}}</td>
+    </tr>
+  </table>
 
+</div> <!-- end of ngIf div -->
 
-</div>
-
-<ngx-smart-modal #myModal identifier="myModal">
+<ngx-smart-modal #myModal identifier="myModal"> <!-- https://www.npmjs.com/package/ngx-smart-modal -->
   <div *ngIf='movie' class="iframe-container">
     <iframe  [class.thumbnail]="thumbnail" [src]="safeSrc" frameborder="0"
         webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
-
   <button (click)="myModal.close()">Close</button>
 </ngx-smart-modal>
