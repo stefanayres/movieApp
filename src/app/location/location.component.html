@@ -1,7 +1,7 @@
 
 <a href='#' id='getLocation'>Find My Location</a>
 
-<select [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)" >
+<select [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)" (ngModelChange)="SetGlobalData()">
       <option *ngFor="let c of cities" [ngValue]="c"> {{c.name}} </option>
 </select>
 
@@ -9,7 +9,7 @@
 <div id='feedback'></div>
 
 
-<div *ngIf='lat'>
+<div *ngIf='lat' >
   <p><strong>Latitude:</strong> {{lat}}<br>
   <strong>Longitude:</strong> {{long}}<br>
   <div>
