@@ -12,6 +12,7 @@ import { LocationComponent } from './location/location.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { MoviesService } from './service/movies.service';
+import { GlobalService } from './global.service';
 import { MDBBootstrapModule } from 'angular-bootstrap-md'; // not using mdbootstrap
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
@@ -37,7 +38,8 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     NgxSmartModalModule.forRoot(),
   ],
   providers: [
-    MoviesService
+    MoviesService,
+    GlobalService
   ],
   bootstrap: [AppComponent]
 })
