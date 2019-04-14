@@ -6,13 +6,22 @@ import { Injectable, Directive } from '@angular/core';
 export class GlobalService {
 
   private geo;
+  private movieId;
 
   constructor() { }
 
       setGeo(val) {
-          this.geo = val;
+        this.geo = val;
       }
       getGeo() {
-          return this.geo;
+        return this.geo;
       }
+
+      setMovieId(val){
+        this.movieId = val;
+      }
+      getMovieId(){
+        return this.movieId;
+      }
+
     }

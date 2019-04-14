@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
     title = 'Movies Near You';
+    geo: any;
 
     pageLinks = [
       {path: '/',           name: 'Home'},
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

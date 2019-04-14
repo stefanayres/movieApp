@@ -14,6 +14,8 @@ export class MoviesService {
     private Global: GlobalService
   ) {
     this.location = this.Global.getGeo();
+    // console.log("The lat is: " + sessionStorage.lat); // use to pass geo to api
+    // console.log("The long is: " + sessionStorage.long);
    }
 
   omdbApi: any = 'db203e5e';
