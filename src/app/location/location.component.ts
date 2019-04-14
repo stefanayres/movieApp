@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GlobalService } from '../global.service'; // test gloabal var
+import { GlobalService } from '../global.service'; // changed to localstorage - keeping code as ref
 
 @Component({
   selector: 'app-location',
@@ -10,12 +10,12 @@ import { GlobalService } from '../global.service'; // test gloabal var
 })
 export class LocationComponent implements OnInit {
 
-lat: any;
-long: any;
-geo: any; // test gloabal var
+  lat: any;
+  long: any;
+  geo: any;
 
   constructor(
-    private Global: GlobalService, // test gloabal var
+    private Global: GlobalService, // changed to localstorage - keeping code as ref
     private httpClient: HttpClient,
     private router: Router,
     private route : ActivatedRoute
@@ -35,20 +35,23 @@ geo: any; // test gloabal var
   function getPositionSuccess(pos){
     console.log(pos);
 
-    this.lat = pos.coords.latitude; // error here, wont pass this point
-    this.long = pos.coords.longitude;
+    // this.lat = pos.coords.latitude; // error here, wont pass this point
+    // this.long = pos.coords.longitude;
 
     const latLocal  = pos.coords.latitude;
     const longLocal = pos.coords.longitude;
 
-    //this.lat = latLocal;
-    //this.long = longLocal;
+    this.lat = latLocal;
+    this.long = longLocal;
 
     console.log(latLocal); // will not show now.
 
     console.log(this.lat);
     console.log(this.long);
-    this.geo = this.lat, this.long;   // test global var
+    this.geo = this.lat + this.long;
+    sessionStorage.setItem('geo', this.geo);
+    sessionStorage.setItem('lat', this.lat);
+    sessionStorage.setItem('long', this.long);
   }
 
   function getPositionFailure(_err: any) {
@@ -70,7 +73,7 @@ geo: any; // test gloabal var
 
   }// end of ngOnInit
 
-  SetGlobalData() { // set the geo var to global var for use else where. 
+  SetGlobalData() { // set the geo var to global var for use else where.---changed to localstorage - keeping code as ref
         this.Global.setGeo(this.geo);
     }
 
@@ -86,8 +89,11 @@ geo: any; // test gloabal var
   onChange(city: any) {
     this.lat = city.lat;
     this.long = city.long;
-
     this.geo = this.lat + this.long; // saving the data to global var
+    sessionStorage.setItem('geo', this.geo);
+    sessionStorage.setItem('lat', this.lat);
+    sessionStorage.setItem('long', this.long);
+console.log("location component " + sessionStorage.geo + ".");
   }
 
 

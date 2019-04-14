@@ -19,6 +19,8 @@ export class MovieComponent implements OnInit {
     key:      any;
     url:      any;
     fullUrl:  any;
+    film: any;
+    geo: any;
 
   constructor(
     private spinner: NgxSpinnerService,
@@ -27,43 +29,49 @@ export class MovieComponent implements OnInit {
     private router: Router,
     private route : ActivatedRoute,
     public ngxSmartModalService: NgxSmartModalService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
-    
-    this.route.paramMap.subscribe(params => {
-    this.data = params.get("movie")
-  })
+    // console.log("The geolocation is: " + sessionStorage.geo + ".");
+    this.geo = sessionStorage.geo;
 
-  this.spinner.show();
-  this.service.showmovie(this.data)
-      .subscribe((data: any) => {
-        this.movie = data as any;
-        console.log(this.movie);
-        this.imdbid = this.movie.imdbID;
-        if (this.imdbid !== undefined){
-        this.runGetTrailer()
-        setTimeout(() => {
-                this.spinner.hide();
-            }, 900);
-    }else{
-        return this.router.navigateByUrl('listMovies/:location');
-    }
-  });
+    this.route.paramMap.subscribe(params => {
+      this.data = params.get("movie")
+    })
+    this.route.paramMap.subscribe(params => {
+      this.film = params.get("filmId")
+    })
+    sessionStorage.setItem('film_id', this.film);
+    console.log(sessionStorage.film_id);
+
+    this.spinner.show();
+    this.service.showmovie(this.data)
+        .subscribe((data: any) => {
+          this.movie = data as any;
+          console.log(this.movie);
+          this.imdbid = this.movie.imdbID;
+          if (this.imdbid !== undefined){
+          this.runGetTrailer()
+          setTimeout(() => {
+                  this.spinner.hide();
+              }, 900);
+      }else{
+          return this.router.navigateByUrl('listMovies/' + this.geo + '');
+        }
+    });
 
   } // end ngOnInit
 
-  runGetTrailer(){
-    this.service.getTrailer(this.imdbid)
-        .subscribe((data: any) => {
-          this.trailer = data as any;
-          this.key = this.trailer.results[0]; // some movies have multiple trailers
-          this.url = this.key.key;
-          this.fullUrl = "https://www.youtube.com/embed/" + this.url + "";
-          this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl
-            (this.fullUrl);
-        });
+    runGetTrailer(){
+      this.service.getTrailer(this.imdbid)
+          .subscribe((data: any) => {
+            this.trailer = data as any;
+            this.key = this.trailer.results[0]; // some movies have multiple trailers
+            this.url = this.key.key;
+            this.fullUrl = "https://www.youtube.com/embed/" + this.url + "";
+            this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl
+              (this.fullUrl);
+          });
       }
 
 }
