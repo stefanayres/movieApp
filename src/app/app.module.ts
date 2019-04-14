@@ -16,6 +16,7 @@ import { GlobalService } from './global.service';
 import { MDBBootstrapModule } from 'angular-bootstrap-md'; // not using mdbootstrap
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { ClosestShowingComponent } from './closest-showing/closest-showing.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
     MovieTimesComponent,
     LocationComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ClosestShowingComponent
   ],
   imports: [
     BrowserModule,
