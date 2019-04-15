@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
+
 
 @Component({
   selector: 'app-header',
@@ -15,10 +17,14 @@ export class HeaderComponent implements OnInit {
       { path: '**', redirectTo: '' }
     ];
 
-  constructor() { }
+  constructor(private _location: Location) { }
 
   ngOnInit() {
 
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
 }
