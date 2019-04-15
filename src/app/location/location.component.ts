@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GlobalService } from '../global.service'; // changed to localstorage - keeping code as ref
 
@@ -16,7 +15,6 @@ export class LocationComponent implements OnInit {
 
   constructor(
     private Global: GlobalService, // changed to localstorage - keeping code as ref
-    private httpClient: HttpClient,
     private router: Router,
     private route : ActivatedRoute
     //private location: LocationService
@@ -35,16 +33,9 @@ export class LocationComponent implements OnInit {
   function getPositionSuccess(pos){
     console.log(pos);
 
-    // this.lat = pos.coords.latitude; // error here, wont pass this point
-    // this.long = pos.coords.longitude;
+    this.lat  = pos.coords.latitude;
+    this.long = pos.coords.longitude;
 
-    const latLocal  = pos.coords.latitude;
-    const longLocal = pos.coords.longitude;
-
-    this.lat = latLocal;
-    this.long = longLocal;
-
-    console.log(latLocal); // will not show now.
 
     console.log(this.lat);
     console.log(this.long);
@@ -64,8 +55,8 @@ export class LocationComponent implements OnInit {
       navigator
         .geolocation
           .getCurrentPosition(
-            getPositionSuccess,
-              getPositionFailure,
+            getPositionSuccess.bind(this),
+              getPositionFailure.bind(this),
               locationServiceOpts
         );
 
