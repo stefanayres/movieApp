@@ -4,12 +4,14 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieTimesComponent } from './movie-times/movie-times.component';
 import { LocationComponent } from './location/location.component';
+import { ClosestShowingComponent } from './closest-showing/closest-showing.component';
 
 const routes: Routes = [
   { path: '',               component:LocationComponent },
   { path: 'listMovies/:location', component:MoviesComponent },
   { path: 'movie/:movie/:filmId',   component:MovieComponent },
-  { path: 'showtime/:id',   component:MovieTimesComponent },
+  { path: 'showings', component:ClosestShowingComponent},
+  { path: 'showtime/:id',   component:MovieTimesComponent }
 ];
 
 @NgModule({

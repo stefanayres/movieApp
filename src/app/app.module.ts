@@ -19,6 +19,7 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { ClosestShowingComponent } from './closest-showing/closest-showing.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import { ClosestShowingComponent } from './closest-showing/closest-showing.compo
     FormsModule,
     MDBBootstrapModule.forRoot(),
     NgxSpinnerModule,
-    NgxSmartModalModule.forRoot(),
+    NgxSmartModalModule.forRoot()
   ],
   providers: [
     MoviesService,

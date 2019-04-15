@@ -62,6 +62,10 @@ export class MovieComponent implements OnInit {
 
   } // end ngOnInit
 
+  onSpeedDialFabClicked(btn: {icon: string}) {
+    console.log(btn);
+  }
+
     runGetTrailer(){
       this.service.getTrailer(this.imdbid)
           .subscribe((data: any) => {
