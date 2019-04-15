@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <Button text="Back" (tap)="backClicked()">Back</Button>
-  <span class="navbar-brand mb-0 h1">{{title}}</span>
+<nav class="navbar  navbar-dark bg-dark">
+  <button type="button" class="btn" (click)="backClicked()"></button> <!-- back button that calls the backClicked function to go to last page -->
+  <img class="img" src="../../../assets/movieFinderCircle.png" alt="movie finder logo" routerLink="/"> <!-- logo made in photoshop -->
 
-    <div class="navbar-nav">
+    <div class="navbar-nav" > <!-- routing learned in class, not needed as only home page but would be usefull if extra pages are added later -->
         <div *ngFor='let pageLink of pageLinks' class="nav-item active">
           <a class='nav-item nav-link'
             [routerLink]='pageLink.path'
@@ -10,7 +10,4 @@
             [routerLinkActiveOptions]='{exact: true}'>{{pageLink.name}}</a>
         </div>
     </div>
-
-
-
 </nav>
