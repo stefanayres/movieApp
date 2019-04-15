@@ -1,16 +1,14 @@
 
 <a href='#' id='getLocation' (ngModelChange)="SetGlobalData()">Find My Location</a>
 
-<select [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)" (ngModelChange)="SetGlobalData()">
+<select [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)">
       <option *ngFor="let c of cities" [ngValue]="c"> {{c.name}} </option>
 </select>
 
-<!-- Show some information about the location, when known -->
 <div id='feedback'></div>
 
-
 <div *ngIf='lat' >
-  <p><strong>Latitude:</strong> {{lat}}<br>
+  <strong>Latitude:</strong> {{lat}}<br>
   <strong>Longitude:</strong> {{long}}<br>
   <div>
     <a routerLink='/listMovies/{{lat}};{{long}}'>Find Movies Near Me </a>

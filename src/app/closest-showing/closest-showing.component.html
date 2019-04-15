@@ -1,15 +1,16 @@
-<h4 style="color: white">Next Showing of {{cinemas.film_name}}</h4>
-<div *ngIf='cinemas' class="card-group">
-  <div  *ngFor="let cinema of cinemas.cinemas"  > <!-- (ngModelChange)="SetGlobalData()" -->
-    <div class="card">
-      <img class="card-img-top" src="{{cinema.logo_url}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{cinema.cinema_name}}</h5>
-        <p class="card-text"><b>Next Showing:</b> {{cinema.date}} / {{cinema.time}}</p>
-        <p class="card-text"><b>Address:</b> {{cinema.address}} {{cinema.address2}}</p>
-        <p class="card-text"><b>City:</b> {{cinema.city}}</p>
+<div *ngIf='cinemas'>
+  <h4 style="color: white">Next Showing of {{cinemas.film_name}}</h4>
+  <div class="card-group">
+    <div  *ngFor="let cinema of cinemas.cinemas">
+      <div class="card">
+        <img class="card-img-top" src="{{cinema.logo_url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{cinema.cinema_name}}</h5>
+          <p class="card-text"><b>Next Showing:</b> {{cinema.date}} / {{cinema.time}}</p>
+          <p class="card-text"><b>Address:</b> {{cinema.address}} {{cinema.address2}}</p>
+          <p class="card-text"><b>City:</b> {{cinema.city}}</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<!-- routerLink='/movie/{{movie.imdb_id}}/{{movie.film_id}}' -->

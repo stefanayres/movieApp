@@ -1,18 +1,14 @@
 <div *ngIf='movie'>
   <button class="myButton" (click)="ngxSmartModalService.getModal('myModal').open()">Play Trailer</button>
-
-
   <h1>{{movie.Title}}</h1>
   <p>{{movie.Year}}</p>
   <p>{{movie.Rating}}</p>
   <p>Runtime - {{movie.Runtime}}</p>
 
-  <p><i><a class="link" href="{{movie.Website}}">Visit {{movie.Title}} Website. </a></i></p>
+  <p><i><u><a class="link" href="{{movie.Website}}">Visit {{movie.Title}} Website</a></u></i></p>
 
-
-  <i><a routerLink='/showings' class="link" >Next Showings Near You</a></i>
-
-
+  <p><i><u><a class="link" routerLink='/showings' class="link" >Next Showings Near You</a></u></i></p>
+  
   <img class="img" *ngIf='movie' src="{{movie.Poster}}" alt="">
 
   <h4>Plot</h4>

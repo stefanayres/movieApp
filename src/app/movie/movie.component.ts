@@ -21,6 +21,8 @@ export class MovieComponent implements OnInit {
     fullUrl:  any;
     film: any;
     geo: any;
+    lat: number;
+    long: number;
 
   constructor(
     private spinner: NgxSpinnerService,
@@ -32,9 +34,8 @@ export class MovieComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // console.log("The geolocation is: " + sessionStorage.geo + ".");
-    this.geo = sessionStorage.geo;
-
+    this.lat  = sessionStorage.lat;
+    this.long = sessionStorage.long;
     this.route.paramMap.subscribe(params => {
       this.data = params.get("movie")
     })
@@ -56,7 +57,7 @@ export class MovieComponent implements OnInit {
                   this.spinner.hide();
               }, 900);
       }else{
-          return this.router.navigateByUrl('listMovies/' + this.geo + '');
+          return this.router.navigateByUrl('listMovies/' + this.lat + ';' + this.long + '');
         }
     });
 

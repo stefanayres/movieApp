@@ -14,6 +14,7 @@ export class MoviesComponent implements OnInit {
     movies: any;
     data: any;
     movieId: number;
+    showNav = true;
 
 
   constructor(

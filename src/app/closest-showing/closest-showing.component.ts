@@ -9,7 +9,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./closest-showing.component.scss']
 })
 export class ClosestShowingComponent implements OnInit {
-  //data: any;
   cinemas: any;
   lat: any;
   lon: any;
@@ -26,11 +25,6 @@ export class ClosestShowingComponent implements OnInit {
     this.lat    = sessionStorage.lat;
     this.lon    = sessionStorage.long;
     this.filmId = sessionStorage.film_id;
-
-    console.log(this.filmId);
-    // this.route.paramMap.subscribe(params => {
-    // this.data = params.get("location")
-    // })
 
     this.spinner.show();
     this.service.closeShowings(this.lat, this.lon, this.filmId)
