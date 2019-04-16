@@ -30,51 +30,49 @@ export class MovieComponent implements OnInit {
     private service: MoviesService,
     private router: Router,
     private route : ActivatedRoute,
-    public ngxSmartModalService: NgxSmartModalService
+    public ngxSmartModalService: NgxSmartModalService // model got from ngx website.
   ) { }
 
   ngOnInit() {
-    this.lat  = sessionStorage.lat;
-    this.long = sessionStorage.long;
+    this.lat  = sessionStorage.lat; // latitude from LocationComponent stored in sessionStorage
+    this.long = sessionStorage.long; // longitude from LocationComponent stored in sessionStorage
+
     this.route.paramMap.subscribe(params => {
-      this.data = params.get("movie")
+      this.data = params.get("movie") // imdb id from MoivesComponent
     })
     this.route.paramMap.subscribe(params => {
-      this.film = params.get("filmId")
+      this.film = params.get("filmId") // movieGLU id from MoviesComponent
     })
     sessionStorage.setItem('film_id', this.film);
-    console.log(sessionStorage.film_id);
+    console.log(sessionStorage.film_id); // storing movieGLU id in sessionStorage
 
     this.spinner.show();
-    this.service.showmovie(this.data)
+    this.service.showmovie(this.data) // cannot add localStorage here as the user would be resetting it each time they checked out a new movie
         .subscribe((data: any) => {
           this.movie = data as any;
           console.log(this.movie);
           this.imdbid = this.movie.imdbID;
-          if (this.imdbid !== undefined){
-          this.runGetTrailer()
+        if (this.imdbid !== undefined){ // checking if the movie returned has imdb id if not no data shows so just return user back to movies list
+          this.runGetTrailer() // now get trailer from themoviedb.org good api for trailers using imdb id
           setTimeout(() => {
                   this.spinner.hide();
               }, 900);
-      }else{
-          return this.router.navigateByUrl('listMovies/' + this.lat + ';' + this.long + '');
-        }
+        }else{
+            return this.router.navigateByUrl('listMovies/' + this.lat + ';' + this.long + '');
+          }
     });
 
-  } // end ngOnInit
 
-  onSpeedDialFabClicked(btn: {icon: string}) {
-    console.log(btn);
-  }
+  } // end ngOnInit
 
     runGetTrailer(){
       this.service.getTrailer(this.imdbid)
           .subscribe((data: any) => {
             this.trailer = data as any;
-            this.key = this.trailer.results[0]; // some movies have multiple trailers
+            this.key = this.trailer.results[0]; // some movies have multiple trailers, get the first one
             this.url = this.key.key;
             this.fullUrl = "https://www.youtube.com/embed/" + this.url + "";
-            this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl
+            this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl // sanitizer the url 
               (this.fullUrl);
           });
       }
