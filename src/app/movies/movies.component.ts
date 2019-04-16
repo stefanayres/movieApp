@@ -16,7 +16,6 @@ export class MoviesComponent implements OnInit {
     movieId: number;
     showNav = true;
 
-
   constructor(
     private spinner: NgxSpinnerService,
     private service: MoviesService,
@@ -31,19 +30,19 @@ export class MoviesComponent implements OnInit {
     })
 
     this.spinner.show();
-    this.service.showmovies(this.data)
-        .subscribe(data => {
-          this.movies = data as any;
-          console.log(this.movies);
-           setTimeout(() => {
-                   this.spinner.hide();
-               }, 900);
-        });
-      }; // end ngOnInit
-
-      // SetGlobalData() { // set the geo var to global for use else where.
-      //       this.Global.setMovieId(this.movieId);
-      //   }
-
-
-  }
+    if(localStorage.getItem('moviesData') === null){
+      this.service.showmovies(this.data)
+          .subscribe(data => {
+            this.movies = data as any;
+            localStorage.setItem('moviesData', JSON.stringify(this.movies));
+             setTimeout(() => {
+                     this.spinner.hide();
+                 }, 900);
+          });
+      }else{
+        this.movies = JSON.parse(localStorage.getItem('moviesData'));
+        this.spinner.hide();
+        console.log(JSON.parse(localStorage.getItem('moviesData')));
+      }
+  }; // end ngOnInit
+}
