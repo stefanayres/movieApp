@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GlobalService } from '../global.service'; // changed to localstorage - keeping code as ref
+// import { GlobalService } from '../global.service'; // changed to localstorage - keeping code as ref
 
 @Component({
   selector: 'app-location',
@@ -12,7 +12,7 @@ export class LocationComponent implements OnInit {
   long: any;
 
   constructor(
-    private Global: GlobalService, // changed to localstorage - keeping code as ref
+    // private Global: GlobalService, // changed to localstorage - keeping code as ref
     private router: Router,
     private route : ActivatedRoute
   ) { }
@@ -26,12 +26,13 @@ export class LocationComponent implements OnInit {
   const feedbackDiv         = document.querySelector('#feedback');
   const locationServiceOpts = {enableHighAccuracy: true}
 
-  function getPositionSuccess(pos){
+  function getPositionSuccess(pos){ // gets user location from geolocation.getCurrentPosition
 
     this.lat  = pos.coords.latitude;
     this.long = pos.coords.longitude;
-    sessionStorage.setItem('lat', this.lat);
-    sessionStorage.setItem('long', this.long);
+    sessionStorage.setItem('lat', this.lat); // stores latitude for closest-showing.component only for the session
+    sessionStorage.setItem('long', this.long); // stores Longitude for closest-showing.component only for the session
+    this.deleteLocal(); // calls the delete function when the user picks new location
   }
 
   function getPositionFailure(_err: any) {
@@ -66,11 +67,16 @@ export class LocationComponent implements OnInit {
             {'name':'Dublin','lat': '53.346293', 'long': '-6.275564'}]; //53.346293, -6.275564
   selectedCity = this.cities[1];
 
-  onChange(city: any) {
+  onChange(city: any) { // gets user location from array above
     this.lat = city.lat;
     this.long = city.long;
-    sessionStorage.setItem('lat', this.lat);
-    sessionStorage.setItem('long', this.long);
+    sessionStorage.setItem('lat', this.lat); // stores latitude for closest-showing.component only for the session
+    sessionStorage.setItem('long', this.long); // stores Longitude for closest-showing.component only for the session
+    this.deleteLocal(); // calls the delete function when the user picks new location
+  }
+
+  deleteLocal(){ // delete local storage of movie list
+    localStorage.removeItem('moviesData');
   }
 
 }
