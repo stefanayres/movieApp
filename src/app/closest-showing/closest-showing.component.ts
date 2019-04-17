@@ -22,9 +22,9 @@ export class ClosestShowingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.lat    = sessionStorage.lat;
-    this.lon    = sessionStorage.long;
-    this.filmId = sessionStorage.film_id;
+    this.lat    = sessionStorage.lat; // latitude from LocationComponent stored in sessionStorage
+    this.lon    = sessionStorage.long; // longitude from LocationComponent stored in sessionStorage
+    this.filmId = sessionStorage.film_id; // film_id from MovieComponent stored in sessionStorage
 
     this.spinner.show();
     this.service.closeShowings(this.lat, this.lon, this.filmId)

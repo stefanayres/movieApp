@@ -10,6 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
+
 export class MoviesComponent implements OnInit {
     movies: any;
     data: any;
@@ -34,7 +35,7 @@ export class MoviesComponent implements OnInit {
       this.service.showmovies(this.data)
           .subscribe(data => {
             this.movies = data as any;
-            localStorage.setItem('moviesData', JSON.stringify(this.movies));
+            localStorage.setItem('moviesData', JSON.stringify(this.movies)); // learned storing js objects here from https://www.competa.com/blog/storing-javascript-object-localstorage/
              setTimeout(() => {
                      this.spinner.hide();
                  }, 900);
@@ -45,4 +46,6 @@ export class MoviesComponent implements OnInit {
         console.log(JSON.parse(localStorage.getItem('moviesData')));
       }
   }; // end ngOnInit
+
+
 }
