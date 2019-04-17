@@ -1,16 +1,33 @@
+<div class="container">
+  <img class="img" src="../../../assets/movieFinderCircle.png" alt="Movie Finder Logo">
 
-<a href='#' id='getLocation' (ngModelChange)="SetGlobalData()">Find My Location</a>
-
-<select [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)">
-      <option *ngFor="let c of cities" [ngValue]="c"> {{c.name}} </option>
-</select>
-
-<div id='feedback'></div>
-
-<div *ngIf='lat' >
-  <strong>Latitude:</strong> {{lat}}<br>
-  <strong>Longitude:</strong> {{long}}<br>
-  <div>
-    <a routerLink='/listMovies/{{lat}};{{long}}'>Find Movies Near Me </a>
+  <div class="descriptionBox">
+    <h3 class="heading">
+      Welcome to Movie Finder
+    </h3>
+    <p class="about">
+      Movie Finder is a useful app to help you find movies showing in cinemas near to you.
+      All you need to do is click the Find My Location button below or pick a city in the list provided and we will
+      give you a list of movies you can go and watch in cinemas near to you. When you find a movie you are intrested in just click
+      on it and we will give you the lenght of the movie, age rating, plot and reviews. You can even visit the movies website or watch
+      the trailer. If you want to watch the movie just click the "Next Showings Near You" link and we will give you all the cinemas
+      playing the movie close by and the next showing times. Enjoy
+    </p>
   </div>
+
+  <a class="getLocation" id='getLocation' (ngModelChange)="SetGlobalData()">Find My Location</a>
+  <div *ngIf='lat' >
+    <div>
+      <a class="getLocation" routerLink='/listMovies/{{lat}};{{long}}'>Lets Go</a>
+    </div>
+  </div>
+
+  <select class="select" [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)">
+        <option *ngFor="let c of cities" [ngValue]="c"> {{c.name}} </option>
+  </select>
+
+  <div id='feedback'></div>
+
+
+
 </div>

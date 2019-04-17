@@ -41,7 +41,6 @@ export class LocationComponent implements OnInit {
 
   getLocationLink
     .addEventListener('click', _e => {
-      feedbackDiv.innerHTML = 'Looking...';
       navigator
         .geolocation
           .getCurrentPosition(
