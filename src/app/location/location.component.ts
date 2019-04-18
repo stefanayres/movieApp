@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 // import { GlobalService } from '../global.service'; // changed to localstorage - keeping code as ref
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-location',
