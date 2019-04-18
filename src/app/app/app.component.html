@@ -4,10 +4,11 @@
   size="medium"
   color="#fff"
   type="la-ball-8bits la-dark la-2x">
- <p style="font-size: 20px; color: white">Loading...</p>
+ <p style="font-size: 20px; color: white">{{'APP.LOADING' | translate}}</p>
 
 </ngx-spinner>
 <app-header></app-header>
+<app-swap-language></app-swap-language> <!-- need to run npm run extract-translations to update json files, issue with ng translate need to install extract-translations and update package.json to get working -->
 <div class='container p-4'>
 <router-outlet></router-outlet>
 </div>
