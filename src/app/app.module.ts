@@ -18,7 +18,11 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { ClosestShowingComponent } from './closest-showing/closest-showing.component';
 
-
+import {HttpClient} from '@angular/common/http';
+import {TranslateModule} from '@ngx-translate/core';
+import {TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { SwapLanguageComponent } from './swap-language/swap-language.component';
 
 @NgModule({
   declarations: [
@@ -29,16 +33,27 @@ import { ClosestShowingComponent } from './closest-showing/closest-showing.compo
     LocationComponent,
     HeaderComponent,
     FooterComponent,
-    ClosestShowingComponent
+    ClosestShowingComponent,
+    SwapLanguageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+
+    TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+
     FormsModule,
     MDBBootstrapModule.forRoot(),
     NgxSpinnerModule,
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+  //  translateModule
   ],
   providers: [
     MoviesService,
@@ -46,4 +61,9 @@ import { ClosestShowingComponent } from './closest-showing/closest-showing.compo
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
