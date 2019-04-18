@@ -1,0 +1,12 @@
+{
+	"APP": {
+    "LOADING": "Loading....",
+		"CHANGE_LANG": "Select Language",
+		"HEADING": "Welcome to Movie Finder"
+	},
+	"LOCATION": {
+		"ABOUT": "Movie Finder is a useful app to help you find movies showing in cinemas near to you. All you need to do is click the Find My Location button below or pick a city in the list provided and we will give you a list of movies you can go and watch in cinemas near to you. When you find a movie you are intrested in just click on it and we will give you the lenght of the movie, age rating, plot and reviews. You can even visit the movies website or watch the trailer. If yo want to watch the movie just click the 'Next Showings Near You' link and we will give you all the cinemas playing the movie close by and the next showing times. Enjoy",
+		"GO": "Lets Go",
+    "FIND": "Find My Location"
+	}
+}
