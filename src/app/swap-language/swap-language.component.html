@@ -1,5 +1,4 @@
 <div>
-  <label for='langSelect'>{{'APP.CHANGE_LANG' | translate}}</label>
   <select #langSelect (change)='translate.use(langSelect.value)'>
     <option
       *ngFor="let lang of translate.getLangs()"
