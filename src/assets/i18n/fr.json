@@ -1,7 +1,7 @@
 {
 	"APP": {
     "LOADING": "Chargement.....",
-		"CHANGE_LANG": "Choisir la langue",
+		"CHANGE_LANG": "langue",
 		"HEADING": "Bienvenue sur Movie Finder"
 	},
 	"LOCATION": {
