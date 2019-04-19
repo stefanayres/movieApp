@@ -11,15 +11,14 @@ export class MoviesService {
   constructor(
     private http: HttpClient
   ) {
-    console.log("The lat is: " + sessionStorage.lat);
-    console.log("The long is: " + sessionStorage.long);
+    // console.log("The lat is: " + sessionStorage.lat);
+    // console.log("The long is: " + sessionStorage.long);
    }
 
   omdbApi: any = 'db203e5e';
   moviebdApi: any = '7b368fb69167a2d40c7c86bd6a293029';
 
   showmovies(location: any) {
-    console.log("service" + location);
     return this.http.get(`http://localhost:8888/cors-proxy/cors-proxy.php?loc=${location}`);
   }
 

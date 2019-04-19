@@ -8,5 +8,15 @@
 		"ABOUT": "Movie Finder est une application utile pour vous aider à trouver des films diffusés dans des cinémas proches de chez vous. Tout ce que vous avez à faire est de cliquer sur le bouton Trouver ma position ci-dessous ou de choisir une ville dans la liste fournie. vous donner une liste de films que vous pouvez aller regarder dans les cinémas près de chez vous. Lorsque vous trouvez un film qui vous intéresse, cliquez simplement surc et nous vous donnerons la longueur du film, son âge, son intrigue et ses critiques. Vous pouvez même visiter le site Web des films ou regarder la bande-annonce. Si vous voulez regarder le film, cliquez simplement sur le lien 'Prochaines séances près de chez vous' et nous vous donnerons tous les cinémas. jouer le film à proximité et les heures de projection suivantes. Prendre plaisir",
 		"FIND": "Trouver ma position",
 		"GO": "Allons-y"
+	},
+	"MOVIE":{
+		"TRAILER": "Jouer la bande-annonce",
+		"PLOT": "Terrain",
+		"SCORE": "But"	,
+		"WEBSITE": "Site Internet",
+		"SHOWING": "Prochains spectacles près de chez vous"
+	},
+	"MOVIES":{
+		"TITLE": "Des films près de chez vous"
 	}
 }

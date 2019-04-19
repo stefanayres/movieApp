@@ -1,5 +1,5 @@
 <div *ngIf='movie'>
-  <button class="myButton" (click)="ngxSmartModalService.getModal('myModal').open()">Play Trailer</button>
+  <button class="myButton" (click)="ngxSmartModalService.getModal('myModal').open()" [translate]="'MOVIE.TRAILER'"></button>
 
   <h1>{{movie.Title}}</h1>
   <div class="infoTop">
@@ -8,18 +8,18 @@
     <p>Runtime: {{movie.Runtime}}</p>
 
   <p><i><u><a class="link" href="{{movie.Website}}">Visit {{movie.Title}} Website</a></u></i></p>
-  <p><i><u><a class="link" routerLink='/showings' class="link" >Next Showings Near You</a></u></i></p>
+  <p><i><u><a class="link" routerLink='/showings' class="link" [translate]="'MOVIE.SHOWING'"></a></u></i></p>
   </div>
 
   <img class="img" *ngIf='movie' src="{{movie.Poster}}" alt="">
 
-  <h4>Plot</h4>
+  <h4 [translate]="'MOVIE.PLOT'"></h4>
   <p class="plot">{{movie.Plot}}</p>
 
   <table  class="rwd-table">
     <tr>
-      <th>Website</th>
-      <th>Score</th>
+      <th [translate]="'MOVIE.WEBSITE'"></th>
+      <th [translate]="'MOVIE.SCORE'"></th>
     </tr>
     <tr *ngFor="let mov of movie.Ratings">
       <td data-th="Website">{{mov.Source}}</td>
@@ -34,5 +34,5 @@
     <iframe  [class.thumbnail]="thumbnail" [src]="safeSrc" frameborder="0"
         webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
-  <button (click)="myModal.close()">Close</button>
+  <!-- <button (click)="myModal.close()">Close</button> -->
 </ngx-smart-modal>

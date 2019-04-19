@@ -5,3 +5,13 @@
 body {
   background-color: #396690;
 }
+
+.nsm-content {
+  background-color: #396690 !important;
+  border-radius: 0.5rem;
+}
+.nsm-dialog-btn-close{
+  bottom: 1rem;
+  top: unset;
+  right: unset;
+}

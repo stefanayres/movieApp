@@ -43,7 +43,6 @@ export class MoviesComponent implements OnInit {
       }else{
         this.movies = JSON.parse(localStorage.getItem('moviesData'));
         this.spinner.hide();
-        console.log(JSON.parse(localStorage.getItem('moviesData')));
       }
   }; // end ngOnInit
 

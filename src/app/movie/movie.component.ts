@@ -43,14 +43,12 @@ export class MovieComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.film = params.get("filmId") // movieGLU id from MoviesComponent
     })
-    sessionStorage.setItem('film_id', this.film);
-    console.log(sessionStorage.film_id); // storing movieGLU id in sessionStorage
+    sessionStorage.setItem('film_id', this.film); // storing movieGLU id in sessionStorage
 
     this.spinner.show();
     this.service.showmovie(this.data) // cannot add localStorage here as the user would be resetting it each time they checked out a new movie
         .subscribe((data: any) => {
           this.movie = data as any;
-          console.log(this.movie);
           this.imdbid = this.movie.imdbID;
         if (this.imdbid !== undefined){ // checking if the movie returned has imdb id if not no data shows so just return user back to movies list
           this.runGetTrailer() // now get trailer from themoviedb.org good api for trailers using imdb id
@@ -72,7 +70,7 @@ export class MovieComponent implements OnInit {
             this.key = this.trailer.results[0]; // some movies have multiple trailers, get the first one
             this.url = this.key.key;
             this.fullUrl = "https://www.youtube.com/embed/" + this.url + "";
-            this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl // sanitizer the url 
+            this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl // sanitizer the url
               (this.fullUrl);
           });
       }

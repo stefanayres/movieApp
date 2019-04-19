@@ -1,4 +1,4 @@
-<h4 style="color: white">Movies Near You</h4>
+<h4 style="color: white" [translate]="'MOVIES.TITLE'"></h4>
 <div *ngIf="movies" class="card-group">
   <div routerLink='/movie/{{movie.imdb_id}}/{{movie.film_id}}' *ngFor="let movie of movies.films"  > <!-- (ngModelChange)="SetGlobalData()" -->
     <div class="card">

@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
-import { MovieTimesComponent } from './movie-times/movie-times.component';
 import { LocationComponent } from './location/location.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -26,12 +25,12 @@ import { SwapLanguageComponent } from './swap-language/swap-language.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
     MovieComponent,
-    MovieTimesComponent,
     LocationComponent,
     HeaderComponent,
     FooterComponent,
@@ -42,7 +41,6 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
     TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -50,7 +48,6 @@ import { environment } from '../environments/environment';
                 deps: [HttpClient]
             }
         }),
-
     FormsModule,
     MDBBootstrapModule.forRoot(),
     NgxSpinnerModule,
