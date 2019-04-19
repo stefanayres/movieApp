@@ -23,6 +23,8 @@ import {TranslateModule} from '@ngx-translate/core';
 import {TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { SwapLanguageComponent } from './swap-language/swap-language.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { SwapLanguageComponent } from './swap-language/swap-language.component';
     MDBBootstrapModule.forRoot(),
     NgxSpinnerModule,
     NgxSmartModalModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   //  translateModule
   ],
   providers: [
