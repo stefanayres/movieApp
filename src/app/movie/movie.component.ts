@@ -56,11 +56,9 @@ export class MovieComponent implements OnInit {
                   this.spinner.hide();
               }, 900);
         }else{
-            return this.router.navigateByUrl('listMovies/' + this.lat + ';' + this.long + '');
+            return this.router.navigate(['listMovies/' + this.lat + ';' + this.long + '', {queryParams: { registered: 'true' } }]);
           }
     });
-
-
   } // end ngOnInit
 
     runGetTrailer(){

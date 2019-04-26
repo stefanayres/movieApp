@@ -45,7 +45,7 @@ export class LocationComponent implements OnInit {
       navigator
         .geolocation
           .getCurrentPosition(
-            getPositionSuccess.bind(this),
+            getPositionSuccess.bind(this), // ref shane for (bind(this))
               getPositionFailure.bind(this),
               locationServiceOpts
         );

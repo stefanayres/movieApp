@@ -1,13 +1,5 @@
-<body class="body">
-<ngx-spinner
-  bdColor="rgba(51,51,51,0.8)"
-  size="medium"
-  color="#fff"
-  type="la-ball-8bits la-dark la-2x">
- <p style="font-size: 20px; color: white">{{'APP.LOADING' | translate}}</p>
-
-</ngx-spinner>
 <app-header></app-header>
+<body class="body">
 <app-swap-language></app-swap-language> <!-- need to run npm run extract-translations to update json files, issue with ng translate need to install extract-translations and update package.json to get working -->
 <div class='container p-4'>
 <router-outlet></router-outlet>
@@ -16,3 +8,13 @@
 <app-footer></app-footer>
 </div> -->
 </body>
+<ngx-spinner
+bdOpacity = 0.8
+bdColor = "rgba(51,51,51,0.8)"
+size = "large"
+color = "#5edad5"
+type = "ball-atom"
+[fullScreen] = "true"
+>
+<p style="font-size: 20px; color: white">{{'APP.LOADING' | translate}}</p>
+</ngx-spinner>
