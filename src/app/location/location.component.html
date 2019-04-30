@@ -3,14 +3,11 @@
 
   <div class="descriptionBox">
     <h3 class="heading" [translate]="'APP.HEADING'"></h3>
-
-    <p class="about" [translate]="'LOCATION.ABOUT'" >
-
-    </p>
+    <p class="about" [translate]="'LOCATION.ABOUT'" ></p>
   </div>
 
   <a class="getLocation" id='getLocation' (ngModelChange)="SetGlobalData()" [translate]="'LOCATION.FIND'" style="color: white"></a>
-  <div *ngIf='lat' >
+  <div *ngIf='lat'>
     <div>
       <a class="getLocation" routerLink='/listMovies/{{lat}};{{long}}' [translate]="'LOCATION.GO'"></a>
     </div>
@@ -21,7 +18,5 @@
   </select>
 
   <div id='feedback'></div>
-
-
 
 </div>

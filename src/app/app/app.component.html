@@ -1,5 +1,5 @@
 <app-header></app-header>
-<body class="body">
+<body class="body" (scroll)="onWindowScroll($event);">
 <app-swap-language></app-swap-language> <!-- need to run npm run extract-translations to update json files, issue with ng translate need to install extract-translations and update package.json to get working -->
 <div class='container p-4'>
 <router-outlet></router-outlet>

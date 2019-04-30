@@ -30,7 +30,7 @@ export class MovieComponent implements OnInit {
     private service: MoviesService,
     private router: Router,
     private route : ActivatedRoute,
-    public ngxSmartModalService: NgxSmartModalService // model got from ngx website.
+    public ngxSmartModalService: NgxSmartModalService // model got from ngx website. - https://www.npmjs.com/package/ngx-smart-modal
   ) { }
 
   ngOnInit() {
