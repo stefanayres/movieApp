@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
 // code from http://joeljoseph.net/angular-sticky-header-on-scroll/ for sticky nav bar
    @HostListener('window:scroll', ['$event'])
    onWindowScroll(e) {
-      if (window.pageYOffset > 0) {
+      if (window.pageYOffset > 220) {
         let element = document.getElementById('navbar');
         element.classList.add('sticky');
       } else {

@@ -5,6 +5,8 @@
   background: -webkit-linear-gradient(45deg, rgb(72,61,122) 0%,rgb(50,79,126) 38%,rgb(57,156,171) 66%,rgb(89,226,215) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg, rgb(72,61,122) 0%,rgb(50,79,126) 38%,rgb(57,156,171) 66%,rgb(89,226,215) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#483d7a', endColorstr='#59e2d7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  height: 3rem;
 }
 
 .img {
@@ -15,10 +17,13 @@
 
 .nav-link { // aligning the home button
     padding: 0rem 0rem 0rem 0rem;
+    margin-top: -1.5rem;
 }
 
 .btn, button { // adding back arrow for button
   background: url(../../../assets/backWhite.png);
   background-repeat: no-repeat;
   height: 2rem;
+  margin-top: -2rem;
+
 }

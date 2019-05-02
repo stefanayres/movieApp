@@ -6,7 +6,7 @@
     <p class="about" [translate]="'LOCATION.ABOUT'" ></p>
   </div>
 
-  <a class="getLocation" id='getLocation' (ngModelChange)="SetGlobalData()" [translate]="'LOCATION.FIND'" style="color: white"></a>
+  <a class="getLocation" id='getLocation' [translate]="'LOCATION.FIND'" style="color: white"></a>
   <div *ngIf='lat'>
     <div>
       <a class="getLocation" routerLink='/listMovies/{{lat}};{{long}}' [translate]="'LOCATION.GO'"></a>

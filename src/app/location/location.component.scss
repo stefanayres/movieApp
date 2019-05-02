@@ -57,6 +57,18 @@ $text-color: white;
   }
 }
 
+@media only screen and (min-height: 800px) {
+
+  .getLocation {
+    margin-top: 2rem;
+  }
+
+  .container {
+    margin-bottom: 50%;
+  }
+
+  }
+
 // select styling
 //https://www.filamentgroup.com/lab/select-css.html
 .select {

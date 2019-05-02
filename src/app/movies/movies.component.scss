@@ -8,13 +8,13 @@
     background: -webkit-linear-gradient(45deg, rgb(72,61,122) 0%,rgb(50,79,126) 38%,rgb(57,156,171) 66%,rgb(89,226,215) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(45deg, rgb(72,61,122) 0%,rgb(50,79,126) 38%,rgb(57,156,171) 66%,rgb(89,226,215) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#483d7a', endColorstr='#59e2d7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+    margin: 1rem;
     border-radius: 1rem;
     box-shadow: 0 0.2rem #000;
   }
 
   .card:active {
-    box-shadow: 0 5px #464646;
+    box-shadow: 0 5px #3e7f9e;
     transform: translateY(4px);
   }
 
@@ -29,6 +29,12 @@
     color: white;
   }
 
+  h4{
+    padding-top: 3rem !important;
+    padding-left: 1rem;
+  }
+
+
 @media only screen and (min-width: 700px) {
   .card-img-top{
     width: 220px;
@@ -40,5 +46,9 @@
     height: 416px;
   }
 
+   h4{
+    padding-top: 3rem !important;
+
+  }
 
 }

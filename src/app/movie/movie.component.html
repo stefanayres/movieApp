@@ -1,33 +1,39 @@
-<div *ngIf='movie'>
-  <button class="myButton" (click)="ngxSmartModalService.getModal('myModal').open()" [translate]="'MOVIE.TRAILER'"></button>
+<body class="main">
+  <div class="back">
+      <div class='container p-4'>
+      <div *ngIf='movie'>
+        <button class="myButton" (click)="ngxSmartModalService.getModal('myModal').open()" [translate]="'MOVIE.TRAILER'"></button>
 
-  <h1>{{movie.Title}}</h1>
-  <div class="infoTop">
-    <p>Age Rating: {{movie.Rated}}</p>
-    <p>Released: {{movie.Released}}</p>
-    <p>Runtime: {{movie.Runtime}}</p>
+        <h1>{{movie.Title}}</h1>
+        <div class="infoTop">
+          <p>Age Rating: {{movie.Rated}}</p>
+          <p>Released: {{movie.Released}}</p>
+          <p>Runtime: {{movie.Runtime}}</p>
+        <p><u><a class="link" href="{{movie.Website}}">Visit {{movie.Title}} Website</a></u></p>
+        </div>
 
-  <p><i><u><a class="link" href="{{movie.Website}}">Visit {{movie.Title}} Website</a></u></i></p>
-  <p><i><u><a class="link" routerLink='/showings' class="link" [translate]="'MOVIE.SHOWING'"></a></u></i></p>
+        <img class="img" *ngIf='movie' src="{{movie.Poster}}" alt="">
+
+        <h4 [translate]="'MOVIE.PLOT'"></h4>
+        <p class="plot">{{movie.Plot}}</p>
+
+        <button class="linkShow" routerLink='/showings' [translate]="'MOVIE.SHOWING'"></button>
+
+        <table  class="rwd-table">
+          <tr>
+            <th [translate]="'MOVIE.WEBSITE'"></th>
+            <th [translate]="'MOVIE.SCORE'"></th>
+          </tr>
+          <tr *ngFor="let mov of movie.Ratings">
+            <td data-th="Website">{{mov.Source}}</td>
+            <td data-th="Score">{{mov.Value}}</td>
+          </tr>
+        </table>
+      </div><!-- end of ngIf div -->
+    </div>
   </div>
+</body>
 
-  <img class="img" *ngIf='movie' src="{{movie.Poster}}" alt="">
-
-  <h4 [translate]="'MOVIE.PLOT'"></h4>
-  <p class="plot">{{movie.Plot}}</p>
-
-  <table  class="rwd-table">
-    <tr>
-      <th [translate]="'MOVIE.WEBSITE'"></th>
-      <th [translate]="'MOVIE.SCORE'"></th>
-    </tr>
-    <tr *ngFor="let mov of movie.Ratings">
-      <td data-th="Website">{{mov.Source}}</td>
-      <td data-th="Score">{{mov.Value}}</td>
-    </tr>
-  </table>
-
-</div> <!-- end of ngIf div -->
 
 <ngx-smart-modal #myModal identifier="myModal"> <!-- https://www.npmjs.com/package/ngx-smart-modal -->
   <div *ngIf='movie' class="iframe-container">

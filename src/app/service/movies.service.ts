@@ -19,8 +19,8 @@ export class MoviesService {
   moviebdApi: any = '7b368fb69167a2d40c7c86bd6a293029';
 
   showmovies(location: any) {
-    return this.http.get(`http://localhost:8888/cors-proxy/cors-proxy.php?loc=${location}`);
-  }
+    return this.http.get(`http://localhost:8888/cors-proxy/cors-proxy.php?loc=${location}`); // https://www.stefandesigns.org/cors/cors-proxy.php
+  } // http://localhost:8888/cors-proxy/cors-proxy.php
 
   showmovie(id: number){
     return this.http.get(`https://www.omdbapi.com/?i=tt${id}&apikey=${this.omdbApi}`);
@@ -32,9 +32,9 @@ export class MoviesService {
 
   closeShowings(lat: any, lon: any, id: any){
     const  params = new  HttpParams({fromString:  'lat='+lat+'&lon='+lon+'&id='+id+''});
-    return this.http.get(`http://localhost:8888/cors-proxy/cors-proxy-cinemas.php`
+    return this.http.get(`http://localhost:8888/cors-proxy/cors-proxy-cinemas.php` // https://www.stefandesigns.org/cors/cors-proxy-cinemas.php
     , {params});
-  }
+  } // http://localhost:8888/cors-proxy/cors-proxy-cinemas.php`
 
 
 }

@@ -31,19 +31,11 @@ export class MoviesComponent implements OnInit {
     this.data = params.get("location")
     })
 
-    // this.route.queryParams
-    //   .subscribe(params => {
-    //     if(params.registered !== undefined && params.registered === 'true') {
-    //         this.infoMessage = 'Registration Successful! Please Login!';
-    //     }
-    //   });
-
     this.spinner.show();
     if(localStorage.getItem('moviesData') === null){
       this.service.showmovies(this.data)
           .subscribe(data => {
             this.movies = data as any;
-            console.log(this.movies);
             localStorage.setItem('moviesData', JSON.stringify(this.movies)); // learned storing js objects here from https://www.competa.com/blog/storing-javascript-object-localstorage/
              setTimeout(() => {
                      this.spinner.hide();
@@ -51,7 +43,6 @@ export class MoviesComponent implements OnInit {
           });
       }else{
         this.movies = JSON.parse(localStorage.getItem('moviesData'));
-        console.log(this.movies);
         setTimeout(() => {
                 this.spinner.hide();
             }, 900);

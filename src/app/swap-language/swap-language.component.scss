@@ -1,19 +1,31 @@
 select {
   margin: 0.5em;
-  float: left;
+  float: right;
+  background-color: Transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: white;
+  margin-top: 1.5rem;
+  margin-right: 1.3rem;
 }
-
-
 
 @media only screen and (max-device-width: 480px) {
-select {
-    background: -webkit-linear-gradient(white, #666);
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  select {
+      background-color: Transparent;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: white;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+      -webkit-appearance: none;
+      padding: 0 0.5em 0 0.5em;
+      margin-top: 1.5rem;
+      margin-right: 1.3rem;
+      float: right;
+  }
+  option{
     color: white;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
-    -webkit-appearance: none;
-    padding: 0 0.5em 0 0.5em;
-    float: right;
-}
+    background-color: Transparent;
+    border: 1px solid #ccc;
+
+  }
 }
