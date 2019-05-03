@@ -1,22 +1,22 @@
 <div class="container">
-  <img class="img" src="../../../assets/movieFinderCircle.png" alt="Movie Finder Logo">
 
-  <div class="descriptionBox">
-    <h3 class="heading" [translate]="'APP.HEADING'"></h3>
-    <p class="about" [translate]="'LOCATION.ABOUT'" ></p>
+<div class="row">
+  <div class="column"  *ngFor="let post of poster | slice:4:8; let i=index"  >
+     <img class="imgback" src="https://image.tmdb.org/t/p/w185/{{post.poster_path}}" alt="Movie Finder Logo"> <!-- https://image.tmdb.org/t/p/w185/  -->
   </div>
+</div>
 
+<div class="locationWrap">
   <a class="getLocation" id='getLocation' [translate]="'LOCATION.FIND'" style="color: white"></a>
   <div *ngIf='lat'>
     <div>
       <a class="getLocation" routerLink='/listMovies/{{lat}};{{long}}' [translate]="'LOCATION.GO'"></a>
     </div>
   </div>
-
   <select class="select" [(ngModel)]="selectedCity" (ngModelChange)="onChange($event)">
         <option *ngFor="let c of cities" [ngValue]="c"> {{c.name}} </option>
   </select>
-
   <div id='feedback'></div>
+</div>
 
 </div>

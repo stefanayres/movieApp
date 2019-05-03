@@ -1,10 +1,18 @@
 $text-color: white;
 
-.img {
-  height: auto;
-  display: block;
-  margin: auto;
-  width: 50%;
+.imgback {
+  object-fit: cover;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  margin-top: 1rem;
 }
 
 .getLocation {
@@ -13,11 +21,13 @@ $text-color: white;
   background-color: #335783;
   margin: auto;
   margin-bottom: 2rem;
-  margin-top: 2rem;
   width: 40%;
   border-radius: 0.5em;
   text-align: center;
   color: $text-color;
+}
+.getLocation.getLocation{
+    margin-top: 2rem;
 }
 
 .getLocation:hover {
@@ -28,33 +38,30 @@ $text-color: white;
 	top:1px;
 }
 
-.about {
-  padding-top: 2rem;
-  color: $text-color;
-  font-size: 0.7rem;
-  text-align: center;
+
+.locationWrap{
+  width: 60%;
+  height: 20rem;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-.heading {
-  padding-top: 2rem;
-  color: $text-color;
-  font-size: 1.5rem;
-  text-align: center;
-}
+@media only screen and (max-width: 800px) {
 
-@media only screen and (min-width: 800px) {
-
-  .about {
-    color: $text-color;
-    font-size: 0.9rem;
-    text-align: center;
+  .row {
+    position: absolute;
+    z-index: -99;
+    filter: blur(2px)
   }
 
-  .heading {
-    color: $text-color;
-    font-size: 1.7rem;
-    text-align: center;
+  .locationWrap{
+    width: auto;
+    padding-top: 30%;
+    margin-top: 4rem;
+    margin-left: 0;
+    margin-right: 0;
   }
+
 }
 
 @media only screen and (min-height: 800px) {

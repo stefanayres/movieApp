@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 // import { GlobalService } from '../global.service'; // changed to localstorage - keeping code as ref
 import {TranslateService} from '@ngx-translate/core';
+import { MoviesService } from '../service/movies.service';
 
 @Component({
   selector: 'app-location',
@@ -11,11 +12,13 @@ import {TranslateService} from '@ngx-translate/core';
 export class LocationComponent implements OnInit {
   lat: any;
   long: any;
+  poster: any;
 
   constructor(
     // private Global: GlobalService, // changed to localstorage - keeping code as ref
     private router: Router,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private service: MoviesService,
   ) { }
 
   ngOnInit() {
@@ -52,6 +55,12 @@ export class LocationComponent implements OnInit {
 
     });
 
+  this.service.getPoster()
+    .subscribe((data: any) => {
+      this.poster = data.results;
+  });
+
+
   }// end of ngOnInit
 
   // SetGlobalData() { // ---changed to localstorage - keeping code as ref
@@ -59,7 +68,7 @@ export class LocationComponent implements OnInit {
   //   }
 
   cities = [{'name':'Dundalk','lat': '54.003927', 'long': '-6.402207'}, //54.003927, -6.402207
-            {'name':'-None-','lat': '0', 'long': '0'},
+            {'name':'-Pick a location-','lat': '0', 'long': '0'},
             {'name':'Droghada','lat': '53.714452', 'long': '-6.351818'},//53.714452, -6.351818
             {'name':'Cavan','lat': '53.990751', 'long': '-7.362873'},//53.990751, -7.362873
             {'name':'Galway','lat': '53.270695', 'long': '-9.061707'},//53.270695, -9.061707
