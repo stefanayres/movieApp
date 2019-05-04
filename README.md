@@ -1,27 +1,37 @@
 # movieApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
+Movie finder is a front-end angular 6 application. It uses multiple api's to get information about current movies playing in cinema's. To get a list of movies showing near by, the user must give the app access to the device location or the user can pick from a list of towns/cities in Ireland. When the list is generated the user can browse each movie and read the plot, movie length, ratings, visit the movie website and even watch a trailer. The user can then check what cinemas the movie is playing in near the choosing location and when.   
 
 ## Development server
 
+Use `git clone <url>` to get this repo on your local machine.
+
+Run `cd <project directory>` to movie to project folder.
+
+Then run `npm install `
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build --prod` to build the project. The build artifacts will be stored in the `dist/movieApp` directory.
 
-## Running unit tests
+## Screenshots
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![](src/assets/images/1png)
 
-## Running end-to-end tests
+![](src/assets/images/2png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![](src/assets/images/3png)
 
-## Further help
+![](src/assets/images/4png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![](src/assets/images/5png)
+
+![](src/assets/images/6png)
+
+![](src/assets/images/7png)
+
+![](src/assets/images/8png)
+
+![](src/assets/images/9png)
