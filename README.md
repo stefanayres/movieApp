@@ -18,20 +18,20 @@ Run `ng build --prod` to build the project. The build artifacts will be stored i
 
 ## Screenshots
 
-![](src/assets/images/1png)
+![](src/assets/images/1.png)
 
-![](src/assets/images/2png)
+![](src/assets/images/2.png)
 
-![](src/assets/images/3png)
+![](src/assets/images/3.png)
 
-![](src/assets/images/4png)
+![](src/assets/images/4.png)
 
-![](src/assets/images/5png)
+![](src/assets/images/5.png)
 
-![](src/assets/images/6png)
+![](src/assets/images/6.png)
 
-![](src/assets/images/7png)
+![](src/assets/images/7.png)
 
-![](src/assets/images/8png)
+![](src/assets/images/8.png)
 
-![](src/assets/images/9png)
+![](src/assets/images/9.png)
