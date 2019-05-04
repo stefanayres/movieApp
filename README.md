@@ -1,6 +1,6 @@
 # movieApp
 
-Movie finder is a front-end angular 6 application. It uses multiple api's to get information about current movies playing in cinema's. To get a list of movies showing near by, the user must give the app access to the device location or the user can pick from a list of towns/cities in Ireland. When the list is generated the user can browse each movie and read the plot, movie length, ratings, visit the movie website and even watch a trailer. The user can then check what cinemas the movie is playing in near the choosing location and when.   
+Movie finder is a front-end angular 7 Progressive web application. It uses multiple api's to get information about current movies playing in cinema's. To get a list of movies showing near by, the user must give the app access to the device location or the user can pick from a list of towns/cities in Ireland. When the list is generated the user can browse each movie and read the plot, movie length, ratings, visit the movie website and even watch a trailer. The user can then check what cinemas the movie is playing in near the choosing location and when.   
 
 ## Development server
 
