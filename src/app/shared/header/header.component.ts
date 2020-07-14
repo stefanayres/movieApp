@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
 
 
   pageLinks = [
-    {path: '/',           name: 'Home'},
+    {path: '/',   name: 'Home'},
     { path: '**', redirectTo: '' }
   ];
 
